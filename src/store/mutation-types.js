@@ -1,0 +1,2 @@
+export const UPDATE_BLOGLIST = 'UPDATE_BLOGLIST';
+export const OPEN_SOME_BLOG = 'OPEN_SOME_BLOG';
