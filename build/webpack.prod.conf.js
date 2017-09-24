@@ -10,6 +10,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
+const SwRegisterWebpackPlugin = require('sw-register-webpack-plugin')
+
 
 var env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
@@ -102,14 +104,10 @@ var webpackConfig = merge(baseWebpackConfig, {
       }
     ]),
     // service worker caching
-    new SWPrecacheWebpackPlugin({
-      cacheId: 'my-vue-app',
-      filename: 'service-worker.js',
-      staticFileGlobs: ['dist/**/*.{js,html,css}'],
-      minify: false,
-      stripPrefix: 'dist/',
-      runtimeCaching: [],
-    })
+    new SWPrecacheWebpackPlugin(config.swPrecache.build),
+    // new SwRegisterWebpackPlugin({
+    //   filePath: path.resolve(__dirname, '../src/sw-register.js')
+    // })
   ]
 })
 
