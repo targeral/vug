@@ -1,13 +1,21 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <router-view></router-view>
+    <blog-list />
+    <blog-content />
   </div>
 </template>
 
 <script>
+import BlogList from './mockpage/BlogList';
+import BlogContent from './mockpage/BlogContent';
+
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    BlogContent,
+    BlogList,
+  }
 }
 </script>
 
