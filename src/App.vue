@@ -2,17 +2,24 @@
   <div id="app">
     <Panel class="panel" />
     <Surface class="surface" />
+    <img src="./assets/logo.png">
+    <blog-list />
+    <blog-content />
   </div>
 </template>
 
 <script>
 import Panel from '@/page/panel';
 import Surface from '@/page/surface';
+import BlogList from './mockpage/BlogList';
+import BlogContent from './mockpage/BlogContent';
 export default {
   name: 'app',
   components: {
     Panel,
     Surface,
+    BlogContent,
+    BlogList,
   }
 }
 </script>
