@@ -7,6 +7,7 @@
 </template>
 
 <script>
+  import { Button } from '@/components';
   export default {
     name: 'feature',
     data () {
@@ -33,6 +34,9 @@
           ];
         }
       }
+    },
+    components: {
+      Button,
     }
   }
 </script>

@@ -17,6 +17,8 @@
     name: 'personData',
     data () {
       return {
+        user: 'U',
+        color: '#f56a00',
         picMock: 'http://litten.me/assets/blogImg/litten.png',
       };
     },
@@ -27,7 +29,7 @@
       },
       author: {
         type: String,
-        default: 'author',
+        default: 'targeral',
       },
       sign: {
         type: String,
@@ -52,6 +54,7 @@
 
     hgroup {
       padding-top: calc(150px/2);
+      text-align: center;
 
       h1 {
         font-size: 24px;

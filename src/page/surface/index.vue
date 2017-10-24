@@ -13,5 +13,7 @@
 <style>
 #surface {
   background-color:dimgrey;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 </style>

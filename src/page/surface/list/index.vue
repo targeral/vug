@@ -1,35 +1,43 @@
 <template>
-  <div class="list">
-    <section class="list-item">
-      <ul>
-        <li>标题组件h1-h5</li>
-        <li>段落组件</li>
-        <li>图片组件</li>
-        <li>表格组件</li>
-        <li>引用组件</li>
-        <li>列表组件</li>
-        <li>分隔线组件</li>
-        <li>链接</li>
-        <li>强调</li>
-        <li>代码</li>
-        <li>more组件</li>
-      </ul>
-      <h level="1" content="lala" />
-    </section>
+  <div class="list-page">
+      <card title="全部文章">
+        <card-grid style="width: 100%;margin-bottom: 10px;">
+          <markdown :more="true" />
+        </card-grid>
+        <card-grid style="width: 100%;margin-bottom: 10px;">
+          <markdown :more="true" />
+        </card-grid>
+        <card-grid style="width: 100%;margin-bottom: 10px;">
+          <markdown :more="true" />
+        </card-grid>
+        <card-grid style="width: 100%;margin-bottom: 10px;">
+          <markdown :more="true" />
+        </card-grid>
+        <card-grid style="width: 100%;margin-bottom: 10px;">
+          <markdown :more="true" />
+        </card-grid>
+        <card-grid style="width: 100%;margin-bottom: 10px;">
+          <markdown :more="true" />
+        </card-grid>
+      </card>
   </div>
 </template>
 
 <script>
   import H from './h';
+  import { Card, Markdown } from '@/components'
 
-  const components = { H };
+  const CardGrid = Card.Grid
+  const components = { H, Card, CardGrid, Markdown };
   const mockData = [];
-
+  console.log(Markdown)
   export default {
     name: 'list',
     components: components,
     data () {
-      return {};
+      return {
+        test: '测试'
+      };
     },
     props: {
       items: {
@@ -38,12 +46,21 @@
           return mockData;
         }
       }
-    }
+    },
   }
 </script>
 
 <style lang="postcss">
-
+  .ant-card-head {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  .list-page {
+    height: 100vh;
+    overflow: auto;
+    border: 1px solid #fff;
+  }
 </style>
 
 
